@@ -17,6 +17,9 @@
 (setq confirm-kill-emacs nil)
 (setq +format-with-lsp nil)
 
+(setq-default flycheck-indication-mode 'left-margin)
+(add-hook! 'flycheck-mode-hook #'flycheck-set-indication-mode)
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "John Doe"
