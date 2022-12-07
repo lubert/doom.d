@@ -14,6 +14,7 @@
 (global-set-key "\M-n" 'highlight-symbol-next)
 (global-set-key "\M-p" 'highlight-symbol-prev)
 (global-set-key [?\C-h] 'delete-backward-char)
+(global-set-key "\M-0" 'treemacs-select-window)
 (setq confirm-kill-emacs nil)
 (setq +format-with-lsp nil)
 
