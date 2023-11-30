@@ -102,3 +102,6 @@
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
 (after! copilot
   (set-face-foreground 'copilot-overlay-face "#7f7f7f"))
+
+(after! lsp-mode
+  (setq lsp-modeline-code-actions-enable nil))
