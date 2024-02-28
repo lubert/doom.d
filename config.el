@@ -103,5 +103,10 @@
 (after! copilot
   (set-face-foreground 'copilot-overlay-face "#7f7f7f"))
 
+(use-package! yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
+
 (after! lsp-mode
   (setq lsp-modeline-code-actions-enable nil))
