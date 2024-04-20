@@ -109,4 +109,6 @@
   (yas-global-mode 1))
 
 (after! lsp-mode
+  (setq lsp-ui-doc-show-with-cursor t)
+  (setq lsp-ui-doc-delay 0.2)
   (setq lsp-modeline-code-actions-enable nil))
