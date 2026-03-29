@@ -21,10 +21,6 @@
 (setq-default flycheck-indication-mode 'left-margin)
 (add-hook! 'flycheck-mode-hook #'flycheck-set-indication-mode)
 
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -92,21 +88,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; accept completion from copilot and fallback to company
-(use-package! copilot
-  :hook (prog-mode . copilot-mode)
-  :bind (:map copilot-completion-map
-              ("<tab>" . 'copilot-accept-completion)
-              ("TAB" . 'copilot-accept-completion)
-              ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)))
-(after! copilot
-  (set-face-foreground 'copilot-overlay-face "#7f7f7f"))
 
-(use-package! yasnippet
-  :ensure t
-  :config
-  (yas-global-mode 1))
+
 
 (after! lsp-mode
   (setq lsp-ui-doc-show-with-cursor t)
