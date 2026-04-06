@@ -31,8 +31,12 @@
   (setq eglot-sync-connect nil)
   (fset #'eglot--message #'ignore))
 
-(add-hook 'find-file-hook #'diff-hl-margin-mode)
-(add-hook 'find-file-hook #'diff-hl-mode)
+(after! autorevert
+  (doom-auto-revert-mode -1)
+  (global-auto-revert-mode 1)
+  (setq auto-revert-use-notify t
+        auto-revert-interval 5
+        auto-revert-check-vc-info nil))
 
 (use-package! treesit-auto
   :config
