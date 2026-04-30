@@ -38,6 +38,11 @@
         auto-revert-interval 5
         auto-revert-check-vc-info nil))
 
+(after! vertico
+  (define-advice vertico--resize-window (:after (&rest _) disable-truncation)
+    (setq-local truncate-lines nil)
+    (set-window-hscroll nil 0)))
+
 (use-package! treesit-auto
   :config
   (treesit-auto-add-to-auto-mode-alist 'all)
